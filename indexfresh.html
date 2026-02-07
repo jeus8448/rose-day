@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rose Day Garden</title>
+</head>
+
+<body style="font-family:sans-serif;text-align:center;background:#ffe6f0;padding:30px;">
+
+<h2>🌹 Rose Day Garden</h2>
+
+<input id="from" placeholder="Your name"><br><br>
+<input id="to" placeholder="Their name"><br><br>
+<textarea id="msg" placeholder="Personal message"></textarea><br><br>
+
+<button onclick="makeLink()">Create Link</button>
+
+<p id="out"></p>
+
+<script>
+function makeLink(){
+const from=document.getElementById("from").value;
+const to=document.getElementById("to").value;
+const msg=document.getElementById("msg").value;
+
+const url="garden.html?from="+encodeURIComponent(from)+
+"&to="+encodeURIComponent(to)+
+"&msg="+encodeURIComponent(msg);
+
+document.getElementById("out").innerHTML=
+"<a href='"+url+"' target='_blank'>"+url+"</a>";
+}
+</script>
+
+</body>
+</html>
