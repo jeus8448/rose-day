@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rose Day Generator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rose Day Garden</title>
 </head>
 
-<body style="text-align:center;font-family:sans-serif;background:#ffe6f0;padding:30px;">
+<body style="font-family:sans-serif;text-align:center;background:#ffe6f0;padding:30px;">
 
-<h2>🌹 Rose Day Surprise Generator</h2>
+<h2>🌹 Rose Day Garden</h2>
 
-<input id="sender" placeholder="Your name" style="padding:10px;width:80%;max-width:300px;"><br><br>
-<input id="crush" placeholder="Crush name" style="padding:10px;width:80%;max-width:300px;"><br><br>
+<input id="from" placeholder="Your name"><br><br>
+<input id="to" placeholder="Their name"><br><br>
+<textarea id="msg" placeholder="Personal message"></textarea><br><br>
 
-<button onclick="generate()" style="padding:12px 20px;background:#ff4d6d;color:white;border:none;border-radius:8px;">
-Generate Link
-</button>
+<button onclick="makeLink()">Create Link</button>
 
-<p id="link"></p>
+<p id="out"></p>
 
 <script>
-function generate() {
-  const sender = document.getElementById("sender").value;
-  const crush = document.getElementById("crush").value;
+function makeLink(){
+const from=document.getElementById("from").value;
+const to=document.getElementById("to").value;
+const msg=document.getElementById("msg").value;
 
-  const url = "rose.html?from=" + encodeURIComponent(sender) + "&to=" + encodeURIComponent(crush);
+const url="garden.html?from="+encodeURIComponent(from)+
+"&to="+encodeURIComponent(to)+
+"&msg="+encodeURIComponent(msg);
 
-  document.getElementById("link").innerHTML =
-    "<br><a href='" + url + "' target='_blank'>" + url + "</a>";
+document.getElementById("out").innerHTML=
+"<a href='"+url+"' target='_blank'>"+url+"</a>";
 }
 </script>
 
